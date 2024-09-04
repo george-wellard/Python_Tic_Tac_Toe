@@ -15,51 +15,70 @@ def player_input(player):
 
     print("It's " + player + " 's turn")
 
-    number = input()
-    board[int(number)] = player
+    turn_over = False;
+
+    while(turn_over is False):
+        number = input()
+        
+        if(board[int(number)] == ' '):
+            board[int(number)] = player
+            turn_over = True
+        else:
+           print("This position has been taken")
+           print("Enter a different number")
 
 def game():
 
     turns = 0
     current_player = 'X'
+    win = False;
 
     while(turns < 9):
        print_board(board)
        player_input(current_player)
 
+
+       # Checking each board combination to see if they've been filled with a straight row of X's or O's and then announcing a winner and ending the loop
        if board[1] == board[2] and board[1] == board[3] and board[1] == 'X' or board[1] == board[2] and board[1] == board[3] and board[1] == 'O':
            print("Game Over")
            print(current_player + " has won!")
+           win = True
            break
        elif board[4] == board[5] and board[4] == board[6] and board[4] == 'X' or board[4] == board[5] and board[4] == board[6] and board[4] == 'O':
            print("Game Over")
            print(current_player + " has won!")
+           win = True
            break
        elif board[7] == board[8] and board[7] == board[9] and board[7] == 'X' or board[7] == board[8] and board[7] == board[8] and board[7] == 'O':
            print("Game Over")
            print(current_player + " has won!")
+           win = True
            break
        elif board[1] == board[4] and board[1] == board[7] and board[1] == 'X' or board[1] == board[4] and board[1] == board[7] and board[1] == 'O':
            print("Game Over")
            print(current_player + " has won!")
+           win = True
            break
        elif board[2] == board[5] and board[2] == board[8] and board[2] == 'X' or board[2] == board[5] and board[2] == board[8] and board[2] == 'O':
            print("Game Over")
            print(current_player + " has won!")
+           win = True
            break
        elif board[3] == board[6] and board[3] == board[9] and board[3] == 'X' or board[3] == board[6] and board[3] == board[9] and board[3] == 'O':
            print("Game Over")
            print(current_player + " has won!")
+           win = True
            break
        elif board[1] == board[5] and board[1] == board[9] and board[1] == 'X' or board[1] == board[5] and board[1] == board[9] and board[1] == 'O':
            print("Game Over")
            print(current_player + " has won!")
+           win = True
            break
        elif board[3] == board[5] and board[3] == board[7] and board[3] == 'X' or board[3] == board[5] and board[3] == board[7] and board[3] == 'O':
            print("Game Over")
            print(current_player + " has won!")
-           break
-       
+           win = True
+           break      
 
        if current_player == 'X':
         current_player = 'O'
@@ -70,6 +89,9 @@ def game():
 
 
     print_board(board)
+
+    if win is False:
+        print("Draw!")
 
 
 game()
