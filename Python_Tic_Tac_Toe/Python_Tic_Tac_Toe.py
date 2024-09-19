@@ -35,6 +35,11 @@ def wipe_board(board):
 
 def player_input(player):
 
+    computer = Opponent()
+
+    print("Player symbol is X")
+    print(computer)
+
     print("It's " + player + " 's turn")
 
     turn_over = False;
