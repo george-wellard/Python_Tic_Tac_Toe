@@ -1,3 +1,20 @@
+import random
+
+
+class Opponent:
+
+    def __init__(self, symbol):
+        self.symbol = symbol
+
+    def change_symbol(self, new_symbol):
+        self.symbol = new_symbol
+
+    def input(self):
+        number
+
+    def __repr__(self):
+        return f"Opponent's symbol is {self.symbol}"
+
 
 print("Tic Tac Toe")
 
@@ -24,6 +41,9 @@ def player_input(player):
 
     while(turn_over is False):
         number = input()
+
+        if number != '1' and '2' and '3' and '4' and '5' and '6' and '7' and '8' and '9':
+            print("Please enter a number")
         
         if(board[int(number)] == ' '):
             board[int(number)] = player
@@ -36,10 +56,13 @@ def game():
 
     turns = 0
     current_player = 'X'
+    computer = Opponent('O')
     win = False
     playing = True
 
     while (playing):
+
+        print(current_player)
 
         while(turns < 9):
 
