@@ -1,20 +1,3 @@
-import random
-
-
-class Opponent:
-
-    def __init__(self, symbol):
-        self.symbol = symbol
-
-    def change_symbol(self, new_symbol):
-        self.symbol = new_symbol
-
-    def input(self):
-        number
-
-    def __repr__(self):
-        return f"Opponent's symbol is {self.symbol}"
-
 
 print("Tic Tac Toe")
 
@@ -34,11 +17,6 @@ def wipe_board(board):
         board[space] = ' '
 
 def player_input(player):
-
-    computer = Opponent()
-
-    print("Player symbol is X")
-    print(computer)
 
     print("It's " + player + " 's turn")
 
@@ -64,6 +42,9 @@ def game():
     computer = Opponent('O')
     win = False
     playing = True
+
+    print("Player symbol is X")
+    print(computer)
 
     while (playing):
 
